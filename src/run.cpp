@@ -9,7 +9,7 @@ int main(int argc, char* argv[]){
     init(wind, windSurf);
 	for(SDL_Event event; event.type!=SDL_QUIT;){
 		while(SDL_PollEvent(&event)!=0){
-			update(event);
+			update(event, wind, windSurf);
 		};
 	};
 };
