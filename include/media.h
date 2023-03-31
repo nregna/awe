@@ -26,8 +26,8 @@ bool init(SDL_Window*& winNo1, SDL_Surface*& surfNo1){
     };
 };
 
-bool surf(string prmNo1="44.png", SDL_Surface*& surfNo1=NULL){ 
-	surfNo1=IMG_Load(prmNo1);
+bool surf(SDL_Surface*& surfNo1, string prmNo1="44.png"){
+	surfNo1=IMG_Load(prmNo1.c_str());
 	if(surfNo1==NULL){
 		return false;
 	}else{
