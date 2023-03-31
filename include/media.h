@@ -2,6 +2,29 @@
 #include"SDL.h"
 #include"SDL_image.h"
 #include"iostream"
+#include"string.h"
+using std::string;
+
+bool init(SDL_Window*& winNo1, SDL_Surface*& surfNo1){
+    if(SDL_Init(SDL_INIT_VIDEO)!=-1){
+        winNo1=SDL_CreateWindow("", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 900, 490, SDL_WINDOW_SHOWN);
+        if(winNo1!=NULL){
+            surfNo1=SDL_GetWindowSurface(winNo1);
+            if(surfNo1!=NULL){
+                return true;
+            }else{
+                printf("%s\n", SDL_GetError());
+                return false;
+            };
+        }else{
+            printf("%s\n", SDL_GetError());
+            return false;
+        };
+    }else{
+        printf("%s\n", SDL_GetError());
+        return false;
+    };
+};
 
 bool surf(string prmNo1="44.png", SDL_Surface*& surfNo1=NULL){ 
 	surfNo1=IMG_Load(prmNo1);
