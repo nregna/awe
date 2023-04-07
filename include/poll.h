@@ -3,10 +3,13 @@
 #include"SDL_image.h"
 #include"include\rendr.h"
 
-bool slide(SDL_Window*&, SDL_Surface*&);
+class Screen{
+    public:
+        bool menu(SDL_Event&, SDL_Texture*&, SDL_Renderer*&);
+};
 
-bool menuPoll(SDL_Event& arg, SDL_Window*& winNo1, SDL_Surface*& surfNo1){
-	if(arg.type==SDL_KEYDOWN){
+bool Screen::menu(SDL_Event& arg, SDL_Texture*& tex, SDL_Renderer*& ren){
+	if(Draw draw; arg.type==SDL_KEYDOWN){
 		switch(arg.key.keysym.sym){
 			case SDLK_BACKSPACE:
 				arg.type=SDL_QUIT;
@@ -15,19 +18,17 @@ bool menuPoll(SDL_Event& arg, SDL_Window*& winNo1, SDL_Surface*& surfNo1){
 				arg.type=SDL_QUIT;
 				break;
             case SDLK_RETURN:
-                slide(winNo1, surfNo1);
+                draw.texture(tex, ren, "44.png");
+                SDL_RenderClear(ren);
+                SDL_RenderCopy(ren, tex, NULL, NULL);
+                SDL_RenderPresent(ren);
                 break;
             case SDLK_SPACE:
-                slide(winNo1, surfNo1);
+                draw.texture(tex, ren, "44.png");
+                SDL_RenderClear(ren);
+                SDL_RenderCopy(ren, tex, NULL, NULL);
+                SDL_RenderPresent(ren);
                 break;
 		};
 	};
-};
-
-//Copy surface with image to window surface.
-bool slide(SDL_Window*& winPrm, SDL_Surface*& surfPrm){
-    Draw draw;
-    SDL_Surface* surfNo2=NULL; draw.surf(surfPrm, surfNo2, "44.png");
-    SDL_BlitSurface(surfNo2, NULL, surfPrm, NULL); SDL_UpdateWindowSurface(winPrm);
-    free(surfNo2);
 };
