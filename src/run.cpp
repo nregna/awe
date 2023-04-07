@@ -6,13 +6,13 @@
 int main(int argc, char* argv[]){
 
     //create instance
-    Windw windw;
+    Window window;
 
     //SDL initialization
-    if(SDL_Init(SDL_INIT_VIDEO)!=-1){
+    if(SDL_Init(SDL_INIT_VIDEO)!=-1&&IMG_Init(IMG_INIT_PNG)){
 
         //load instance window
-        windw.init(windw.wind, windw.windSurf);
+        window.init();
 
     };
 
@@ -21,9 +21,13 @@ int main(int argc, char* argv[]){
 
         //updates window surface
 		while(SDL_PollEvent(&event)!=0){
-			windw.update(event);
+			window.update(event);
 		};
 
 	};
 
+    //close up
+    window.close(); SDL_Quit(); IMG_Quit();
+
 };
+
