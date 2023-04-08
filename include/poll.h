@@ -1,7 +1,7 @@
-#include"iostream"
-#include"SDL.h"
-#include"SDL_image.h"
-#include"include\rendr.h"
+#include<iostream>
+#include<SDL.h>
+#include<SDL_image.h>
+#include"rendr.h"
 
 class Screen{
     public:
