@@ -1,7 +1,7 @@
 #pragma once
-#include"iostream"
-#include"SDL.h"
-#include"SDL_image.h"
+#include<iostream>
+#include<SDL.h>
+#include<SDL_image.h>
 
 void dest(SDL_Texture*&);
 void desw(SDL_Window*&);
