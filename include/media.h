@@ -1,9 +1,9 @@
 #pragma once
-#include"iostream"
-#include"SDL.h"
-#include"SDL_image.h"
-#include"include\rendr.h"
-#include"include\poll.h"
+#include<iostream>
+#include<SDL.h>
+#include<SDL_image.h>
+#include"rendr.h"
+#include"poll.h"
 
 class Window{
     public:
