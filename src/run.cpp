@@ -1,7 +1,7 @@
-#include"iostream"
-#include"SDL.h"
-#include"SDL_image.h"
-#include"include\media.h"
+#include<iostream>
+#include<SDL.h>
+#include<SDL_image.h>
+#include"media.h"
 
 int main(int argc, char* argv[]){
 
