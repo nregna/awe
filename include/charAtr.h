@@ -1,9 +1,9 @@
 #ifndef charAtr_H_INCLUDED
 #define charAtr_H_INCLUDED
 
-#include"iostream"
-#include"SDL.h"
-#include"SDL_image.h"
+#include<iostream>
+#include<SDL.h>
+#include<SDL_image.h>
 #include"media.h"
 
 enum eric{
